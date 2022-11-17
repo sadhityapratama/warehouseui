@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row mt-5">
+        <div class="col">
+            <div class="row">
+                <div class="col">
+                    <div class="d-flex justify-content-between">
+                        <div class="title">
+                            <h3>Add Asset Form</h3>
+                        </div>
+                        <button type="button" class="btn btn-primary" (click)="goBack()">back to previous page</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <form (ngSubmit)="onSubmit()" #assetForm="ngForm">
+                <div class="mb-3">
+                  <label for="exampleInputAssetName" class="form-label">Asset Name</label>
+                  <input type="text" class="form-control" id="exampleInputAssetName" aria-describedby="assetNameHelp" required [(ngModel)]="modelAsset.assetName" name="assetName" #assetName="ngModel">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputAssetDescription" class="form-label">Asset Description</label>
+                    <input type="text" class="form-control" id="exampleInputAssetDescription" aria-describedby="assetDescriptionHelp" required [(ngModel)]="modelAsset.assetDescription" name="assetDescription" #assetDescription="ngModel">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputAssetInformation" class="form-label">Asset Information</label>
+                    <input type="text" class="form-control" id="exampleInputAssetInformation" aria-describedby="assetInformationHelp" required [(ngModel)]="modelAsset.assetInformation" name="assetInformation" #assetInformation="ngModel">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+        </div>
+    </div>
+</div>

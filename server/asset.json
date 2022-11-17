@@ -1,0 +1,28 @@
+{
+  "object": [
+      {
+          "barcode": "5a26bfba-66a1-11ed-859e-05ac4f3044aa",
+          "assetName": "qwe",
+          "assetDescription": "qqqq rgb",
+          "assetInformation": "qwwwwwww tecware"
+      },
+      {
+          "barcode": "5d1ddfab-66a1-11ed-859e-a31f309b8862",
+          "assetName": "jadi berubah nanyeak",
+          "assetDescription": "kamu bertanya tanneak",
+          "assetInformation": "potongan cepmek"
+      },
+      {
+          "barcode": "608448aa-668c-11ed-b0b0-b596c3ba2f9f",
+          "assetName": "headet",
+          "assetDescription": "headset rgb",
+          "assetInformation": "barang tecware"
+      },
+      {
+          "barcode": "9030dfab-668c-11ed-b0b0-c7a8d77c4d8b",
+          "assetName": "bedak",
+          "assetDescription": "picakhu rgb",
+          "assetInformation": "keyboard tecware"
+      }
+  ]
+}

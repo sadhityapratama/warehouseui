@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row mt-3">
+        <a routerLink="/add" >View Profile</a>
+    </div>
+    <div class="row mt-3" *ngIf="assetFromDashboard.length > 0; else second">
+        <div class="col-4" *ngFor="let asset of assetFromDashboard">
+            <p>{{asset.assetName | uppercase}}</p>
+        </div>
+    </div>
+    <ng-template #second>
+        <div class="row">
+            <div class="col">
+                <h1>No Data Found!</h1>
+            </div>
+        </div>
+    </ng-template>
+</div>
