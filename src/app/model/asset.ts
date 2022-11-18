@@ -5,6 +5,12 @@ export interface Asset {
   assetInformation: string;
 }
 
+export interface AssetResponse {
+  status: number;
+  message: string;
+  object: Asset[];
+}
+
 export class AssetModel {
   constructor(
     public assetName: string,

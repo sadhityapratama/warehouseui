@@ -1,1 +1,6 @@
-<app-asset [assetFromDashboard]="asset"></app-asset>
+
+<button class="btn btn-primary" (click)="logout()">Logout</button>
+<a [routerLink]="['/asset']" routerLinkActive="active"> Asset</a>
+<div></div>
+<a [routerLink]="['/warehouse']" routerLinkActive="active">Warehouse</a>
+<router-outlet></router-outlet>

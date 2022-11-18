@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { Asset } from '../model/asset';
+import { Router } from '@angular/router';
+import { Asset, AssetResponse } from '../model/asset';
+import { AssetService } from '../service/asset.service';
 
 @Component({
   selector: 'app-asset',
@@ -7,11 +9,24 @@ import { Asset } from '../model/asset';
   styleUrls: ['./asset.component.css']
 })
 export class AssetComponent {
-  @Input() assetFromDashboard!: Asset[];
-  tanggal = new Date();
 
-  constructor() { }
+  assetResponse!: AssetResponse;
+  assets: Asset[] = [];
+
+  constructor(
+    private assetService: AssetService,
+    private route: Router
+  ) { }
 
   ngOnInit(): void {
+    this.getAsset()
+    console.log(this.assets)
+  }
+
+  getAsset(): void {
+    this.assetService.getAsset()
+      .subscribe(assets => {
+        this.assets = assets.object
+      });
   }
 }

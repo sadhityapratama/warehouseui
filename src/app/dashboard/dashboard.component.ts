@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Asset } from '../model/asset';
 import { AssetService } from '../service/asset.service';
 import { Location } from '@angular/common';
+import { HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,15 +13,15 @@ import { Location } from '@angular/common';
 export class DashboardComponent {
   asset: Asset[] = [];
 
-  constructor(private assetService: AssetService, private location: Location) { }
+  constructor(private assetService: AssetService, private location: Location, private route: Router) { }
 
   ngOnInit(): void {
-    this.asset = []
-    this.getAsset()
+    
   }
 
-  getAsset(): void {
-    this.assetService.getAsset()
-      .subscribe(asset => this.asset = asset);
+  logout(): void {
+    this.route.navigate(['/login'])
   }
+
+  
 }
