@@ -5,10 +5,15 @@ export interface Asset {
   assetInformation: string;
 }
 
-export interface AssetResponse {
+export interface AssetBulkResponse {
   status: number;
   message: string;
   object: Asset[];
+}
+export interface AssetResponse {
+status: number;
+message: string;
+object: Asset;
 }
 
 export class AssetModel {

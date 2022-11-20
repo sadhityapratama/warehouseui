@@ -5,9 +5,14 @@ export interface Warehouse {
     warehouseCapacity: number;
   }
   
-  export interface WarehouseResponse {
+export interface WarehouseBulkResponse {
     status: number;
     message: string;
     object: Warehouse[];
-  }
+}
+export interface WarehouseResponse {
+  status: number;
+  message: string;
+  object: Warehouse;
+}
   

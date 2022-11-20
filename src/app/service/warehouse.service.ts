@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Warehouse, WarehouseResponse } from '../model/warehouse';
+import { StockResponse } from '../model/stock';
+import { Warehouse, WarehouseBulkResponse, WarehouseResponse } from '../model/warehouse';
 
 @Injectable({
   providedIn: 'root'
@@ -12,21 +13,27 @@ export class WarehouseService {
 
   constructor(private http: HttpClient) {}
 
-  getWarehouse(): Observable<WarehouseResponse>{
-    return this.http.get<WarehouseResponse>(this.warehouseUrl+'/listall');
+  getWarehouse(): Observable<WarehouseBulkResponse>{
+    return this.http.get<WarehouseBulkResponse>(this.warehouseUrl+'/listall');
   }
 
-  getWarehouseDetail(id: number): Observable<Warehouse>{
-    const urlByID = `${this.warehouseUrl}/${id}`
-    return this.http.get<Warehouse>(urlByID)
+  getWarehouseDetailStock(id: number): Observable<StockResponse>{
+    const urlByID = `${this.warehouseUrl}/liststock?id=${id}`
+    return this.http.get<StockResponse>(urlByID)
   }
 
-  addWarehouse(warehouse: Warehouse): Observable<Warehouse>{
-    return this.http.post<Warehouse>(this.warehouseUrl, warehouse)
+  addWarehouse(warehouse: Warehouse): Observable<WarehouseResponse>{
+    // console.log(warehouse)
+    return this.http.post<WarehouseResponse>(this.warehouseUrl+'/add', warehouse)
   }
 
-  deleteWarehouse(id: number): Observable<Warehouse>{
-    const urlByID = `${this.warehouseUrl}/${id}`
-    return this.http.delete<Warehouse>(urlByID)
+  editWarehouse(warehouse: Warehouse): Observable<WarehouseResponse>{
+    // console.log(warehouse)
+    return this.http.put<WarehouseResponse>(this.warehouseUrl+'/update', warehouse)
+  }
+
+  deleteWarehouse(id: number): Observable<WarehouseResponse>{
+    const urlByID = `${this.warehouseUrl}/delete?id=${id}`
+    return this.http.delete<WarehouseResponse>(urlByID)
   }
 }

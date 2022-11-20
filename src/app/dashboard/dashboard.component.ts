@@ -16,7 +16,7 @@ export class DashboardComponent {
   constructor(private assetService: AssetService, private location: Location, private route: Router) { }
 
   ngOnInit(): void {
-    
+    console.log("Dashboard Component Loaded")
   }
 
   logout(): void {

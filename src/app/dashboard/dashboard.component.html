@@ -1,6 +1,12 @@
-
-<button class="btn btn-primary" (click)="logout()">Logout</button>
-<a [routerLink]="['/asset']" routerLinkActive="active"> Asset</a>
-<div></div>
-<a [routerLink]="['/warehouse']" routerLinkActive="active">Warehouse</a>
-<router-outlet></router-outlet>
+<div class="container overflow-hidden text-center">
+    <div class="row gy-5">
+      <div class="col-6">
+        <div class="p-3 border bg-light" [routerLink]="['/asset']" routerLinkActive="active">Asset</div>
+      </div>
+      <div class="col-6">
+        <div class="p-3 border bg-light" [routerLink]="['/warehouse']" routerLinkActive="active">Warehouse</div>
+      </div>
+      <div class="col-6">
+        <div class="p-3 border bg-light" [routerLink]="['/transaction']" routerLinkActive="active">Transaction</div>
+      </div>
+  </div>

@@ -12,14 +12,14 @@ import { LoginService } from '../service/login.service';
 export class LoginComponent {
   credentials = new Credentials('','')
 
-  username!: string;
-  password!: string;
   errorMessage = 'Invalid Credentials';
   successMessage!: string;
   invalidLogin = false;
   loginSuccess = false;
   constructor(
-    private loginService: LoginService, private http: HttpClient, private router: Router
+    private loginService: LoginService
+    , private http: HttpClient
+    , private router: Router
   ){
     
   }

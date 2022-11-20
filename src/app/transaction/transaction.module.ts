@@ -1,20 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TransactionComponent } from './transaction.component';
 import { RouterModule, Routes } from '@angular/router';
-import { AssetComponent } from '../asset/asset.component';
-import { WarehouseComponent } from './warehouse.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
-    path: '', component: WarehouseComponent, children: [
+    path: '', component: TransactionComponent, children: [
     ]
   }
 ];
 
 @NgModule({
   declarations: [
-    WarehouseComponent
+    TransactionComponent
   ],
   imports: [
     CommonModule,
@@ -23,4 +22,4 @@ const routes: Routes = [
     ReactiveFormsModule
   ]
 })
-export class WarehouseModule { }
+export class TransactionModule { }
